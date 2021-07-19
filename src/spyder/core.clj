@@ -12,6 +12,6 @@
   (let [urls (pages-list 0 50)]
     (time (channels/async-wiki urls))
     (time
-     (let [futures (doall (map futures/callback-wiki urls))]
+     (let [futures (doall (map futures/future-wiki urls))]
      (doseq [resp futures]
        @resp)))))

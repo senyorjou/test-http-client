@@ -13,7 +13,7 @@
   (println (format "Body is: %d bytes long" (count body)))
   url)
 
-(defn callback-wiki [url]
+(defn future-wiki [url]
   (http/get url {:keepalive 30000}
             (fn [{:keys [status headers body error]}]
               (if error
